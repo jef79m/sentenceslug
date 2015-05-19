@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'sentenceslug',
   packages = ['sentenceslug'], # this must be the same as the name above
-  version = '0.1',
+  version = '0.1a',
   description = 'Generate random slugs using basic sentence structure',
   author = 'jef79m',
   author_email = 'jeff@fuzzknuckle.com',
