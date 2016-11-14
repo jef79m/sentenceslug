@@ -4,26 +4,23 @@ from wordlists import WordLists as WL
 
 class SentenceSlug:
 
-    def __init__(self, withint=False):
-        self.adjective = WL.randomAdjective().title()
-        self.determiner = WL.randomDeterminer().title()
-        self.noun = WL.randomNoun().title()
-        self.verb = WL.randomVerb().title()
+    @classmethod
+    def makeslug(cls, digits=0, simple=False, delimiter=""):
 
-        if self.determiner == 'A' and self.adjective[0] in ['A', 'E', 'I', 'O', 'U']:
-            self.determiner = 'An'
-        self.slug = "%s%s%s%s" % (self.verb, self.determiner, self.adjective, self.noun)
-        if withint:
-            self.slug = "%s%03d" % (self.slug, random.randint(1,999))
+        adjective = WL.randomAdjective().title()
+        noun = WL.randomNoun().title()
 
-class SimpleSlug:
-    def __init__(self, withint=False):
-        self.adjective = WL.randomAdjective().title()
-        self.noun = WL.randomNoun().title()
-
-        self.slug = "%s%s" % (self.adjective, self.noun)
-        if withint:
-            self.slug = "%s%03d" % (self.slug, random.randint(1,999))
+        if not simple:
+            verb = WL.randomVerb().title()
+            determiner = WL.randomDeterminer().title()
+            if determiner == 'A' and adjective[0] in ['A', 'E', 'I', 'O', 'U', 'H']:
+                determiner = 'An'
+            slug_list = [verb, determiner, adjective, noun]
+        else:
+            slug_list = [adjective, noun]
+        if digits:
+            slug_list.append(str(random.randint(1, 10 ** digits - 1)).zfill(digits))
+        return delimiter.join(slug_list)
 
 if __name__ ==  '__main__':
 
@@ -31,28 +28,28 @@ if __name__ ==  '__main__':
     print "Examples of sentence slugs without integer postfix: (%s combos)" % combos
     for i in range(10):
         ss = SentenceSlug()
-        print ss.slug
+        print ss.makeslug()
 
     print ""
 
     combos = combos * 999
     print "Examples of sentence slugs with integer postfix: (%s combos)" % combos
     for i in range(10):
-        ss = SentenceSlug(withint=True)
-        print ss.slug
+        ss = SentenceSlug()
+        print ss.makeslug(digits=3)
 
     print ""
 
     combos = len(WL.adjectives) * len(WL.nouns)
     print "Examples of simple slugs without integer postfix: (%s combos)" % combos
     for i in range(10):
-        ss = SimpleSlug()
-        print ss.slug
+        ss = SentenceSlug()
+        print ss.makeslug(simple=True)
 
     print ""
 
     combos = combos * 999
     print "Examples of simple slugs with integer postfix: (%s combos)" % combos
     for i in range(10):
-        ss = SimpleSlug(withint=True)
-        print ss.slug
+        ss = SentenceSlug()
+        print ss.makeslug(simple=True, digits=3)

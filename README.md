@@ -4,28 +4,24 @@ a module to generate realtively easy to remember slugs
 ## Usage
 
 ```python
-from sentenceslug import SentenceSlug
+In [1]: from sentenceslug import *
 
-plainslug = SentenceSlug()
+In [2]: sentence_slug()
+Out[2]: 'Improve_That_Last_Day'
 
-print plainslug.slug
-# ManageTheSingleGoal
+In [3]: sentence_slug_digits()
+Out[3]: 'Start_His_National_Town_377'
 
-intslug = SentenceSlug(withint=True)
-print intslug.slug
-# StateHisEconomicColor926
+In [4]: simple_slug()
+Out[4]: 'NationalCar'
 
+In [5]: simple_slug_digits()
+Out[5]: 'LegalSystem305'
 
-from sentenceslug import SimpleSlug
+In [6]: nsa_codeword()
+Out[6]: 'POORUSE'
 
-plainslug = SimpleSlug()
-
-print plainslug.slug
-# HighContract
-
-plainslug = SimpleSlug(withint=True)
-
-print plainslug.slug
-#GoodBody134
+In [7]: make_slug(simple=True, digits=5, delimiter="-")
+Out[7]: 'Short-Good-83933'
 
 ```
