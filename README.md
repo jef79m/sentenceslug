@@ -1,6 +1,11 @@
 # sentenceslug
-a module to generate realtively easy to remember slugs
+a module to generate relatively easy to remember slugs
 
+## Installation
+```bash
+pip install sentenceslug
+
+```
 ## Usage
 
 ```python
