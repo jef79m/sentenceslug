@@ -2,8 +2,8 @@ import random
 
 from .wordlists import WordLists as WL
 
-class SentenceSlug:
 
+class SentenceSlug:
     @classmethod
     def makeslug(cls, digits=0, simple=False, delimiter=""):
 
@@ -13,8 +13,8 @@ class SentenceSlug:
         if not simple:
             verb = WL.randomVerb().title()
             determiner = WL.randomDeterminer().title()
-            if determiner == 'A' and adjective[0] in ['A', 'E', 'I', 'O', 'U', 'H']:
-                determiner = 'An'
+            if determiner == "A" and adjective[0] in ["A", "E", "I", "O", "U", "H"]:
+                determiner = "An"
             slug_list = [verb, determiner, adjective, noun]
         else:
             slug_list = [adjective, noun]
@@ -22,7 +22,8 @@ class SentenceSlug:
             slug_list.append(str(random.randint(1, 10 ** digits - 1)).zfill(digits))
         return delimiter.join(slug_list)
 
-if __name__ ==  '__main__':
+
+if __name__ == "__main__":
 
     combos = len(WL.verbs) * len(WL.determiners) * len(WL.adjectives) * len(WL.nouns)
     print("Examples of sentence slugs without integer postfix: (%s combos)" % combos)

@@ -1,13 +1,21 @@
-from distutils.core import setup
-setup(
-  name = 'sentenceslug',
-  packages = ['sentenceslug'], # this must be the same as the name above
-  version = '1.0',
-  description = 'Generate random slugs using basic sentence structure',
-  author = 'jef79m',
-  author_email = 'jeff@fuzzknuckle.com',
-  url = 'https://github.com/jef79m/sentenceslug', # use the URL to the github repo
-  download_url = 'https://github.com/jef79m/sentenceslug/tarball/1.0', # I'll explain this in a second
-  keywords = ['random', 'slug', 'sentence'], # arbitrary keywords
-  classifiers = [],
+import setuptools
+
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
+setuptools.setup(
+    name="sentenceslug",
+    version="1.1",
+    author="jef79m",
+    author_email="jeff@fuzzknuckle.com",
+    description="Generate random slugs using basic sentence structure",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/jef79m/sentenceslug",
+    keywords=["random", "slug", "sentence"],
+    packages=setuptools.find_packages(),
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "Operating System :: OS Independent",
+    ],
 )

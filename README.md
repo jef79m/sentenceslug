@@ -30,3 +30,10 @@ In [7]: make_slug(simple=True, digits=5, delimiter="-")
 Out[7]: 'Short-Good-83933'
 
 ```
+
+## Changelog
+
+### V1.1 2018-12-05
+    - Python 3 Changes
+
+    
