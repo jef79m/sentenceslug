@@ -1,6 +1,6 @@
 import random
 
-from wordlists import WordLists as WL
+from .wordlists import WordLists as WL
 
 class SentenceSlug:
 
@@ -25,31 +25,31 @@ class SentenceSlug:
 if __name__ ==  '__main__':
 
     combos = len(WL.verbs) * len(WL.determiners) * len(WL.adjectives) * len(WL.nouns)
-    print "Examples of sentence slugs without integer postfix: (%s combos)" % combos
+    print("Examples of sentence slugs without integer postfix: (%s combos)" % combos)
     for i in range(10):
         ss = SentenceSlug()
-        print ss.makeslug()
+        print(ss.makeslug())
 
-    print ""
+    print("")
 
     combos = combos * 999
-    print "Examples of sentence slugs with integer postfix: (%s combos)" % combos
+    print("Examples of sentence slugs with integer postfix: (%s combos)" % combos)
     for i in range(10):
         ss = SentenceSlug()
-        print ss.makeslug(digits=3)
+        print(ss.makeslug(digits=3))
 
-    print ""
+    print("")
 
     combos = len(WL.adjectives) * len(WL.nouns)
-    print "Examples of simple slugs without integer postfix: (%s combos)" % combos
+    print("Examples of simple slugs without integer postfix: (%s combos)" % combos)
     for i in range(10):
         ss = SentenceSlug()
-        print ss.makeslug(simple=True)
+        print(ss.makeslug(simple=True))
 
-    print ""
+    print("")
 
     combos = combos * 999
-    print "Examples of simple slugs with integer postfix: (%s combos)" % combos
+    print("Examples of simple slugs with integer postfix: (%s combos)" % combos)
     for i in range(10):
         ss = SentenceSlug()
-        print ss.makeslug(simple=True, digits=3)
+        print(ss.makeslug(simple=True, digits=3))
