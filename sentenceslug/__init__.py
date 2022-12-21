@@ -1,5 +1,5 @@
 from .sentenceslug import SentenceSlug
-
+from random import choice
 
 def simple_slug():
     ss = SentenceSlug()
@@ -29,3 +29,7 @@ def nsa_codeword():
 def make_slug(**kwargs):
     ss = SentenceSlug()
     return ss.makeslug(**kwargs)
+
+def make_password():
+    ss = SentenceSlug()
+    return ss.makeslug(simple=True, delimiter=choice("_-:+"), digits=3)

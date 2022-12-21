@@ -12,7 +12,11 @@ class WordLists:
                         'final', 'following', 'present', 'nice', 'trip', 'close', 'current', 'legal', 'red', 'happy', 'concerned',
                         'individual', 'normal', 'previous', 'serious', 'significant', 'prime', 'industrial', 'sorry', 'labor', 'left',
                         'dead', 'specific', 'total', 'appropriate', 'military', 'basic', 'original', 'successful', 'aware', 'popular',
-                        'professional', 'heavy', 'top', 'dark', 'ready', 'useful']
+                        'professional', 'heavy', 'top', 'dark', 'ready', 'useful', 'massive', 'large', 'huge', 'biggest', 'rotund',
+                        'plump', 'small', 'tiny', 'miniscule', 'microscopic', 'upright', 'angled', 'highest', 'lowest',
+                        'red', 'green', 'blue', 'yellow', 'purple', 'orange', 'pink', 'violet', 
+                        'putrid', 'delicious', 'tasty', 'horrible', 'aromatic', 'supple', 'sumptuous', 'velvety', 
+                        'warm', 'cold', 'hot', 'tepid', 'frigid', 'boiling', 'freezing', 'frozen']
     nouns = ['time', 'year', 'people', 'way', 'man', 'day', 'thing', 'child', 'government', 'part', 'life', 'case',
                         'woman', 'work', 'system', 'group', 'number', 'world', 'area', 'course', 'company',
                         'problem', 'service', 'hand', 'party', 'school', 'place', 'point', 'house', 'country', 'week',
